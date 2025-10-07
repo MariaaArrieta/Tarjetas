@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarjeta Desplegable</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+  }
+
+  .card {
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    background: #fff;
+    transition: transform 0.3s;
+    cursor: pointer;
+
+
+      flex: 1; /* ocupa todo el espacio restante */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card-header {
+    padding: 20px;
+    background: #4CAF50;
+    color: #fff;
+    font-size: 1.2em;
+  }
+
+  .card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    padding: 0 20px;
+    background: #f9f9f9;
+  }
+
+  .card:hover .card-content {
+    max-height: 500px; /* Ajusta según la cantidad de info */
+    padding: 20px;
+  }
+
+  .cuadro{
+    display: flex;
+    gap: 10px; /* separa los elementos */
+  align-items: flex-start; /*alinea arriba */
+  /* align-items: stretch */
+  
+  }
+
+  .cuadro img{
+    object-fit: cover;
+    height: 100%;
+  }
+   /* Bloque siempre visible (resumen) */
+  .card-resumen {
+    padding: 15px 20px;
+    font-size: 0.95em;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .card-content p {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+</head>
+<body>
+<div class="cuadro">
+
+<img src="descarga.jpg" alt="algo">
+
+
+<div class="card">
+    
+  <div class="card-header">Información Importante</div>
+   <div class="card-resumen">
+      <ul>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+      </ul>
+    </div>
+  <div class="card-content">
+    <p>Esta es la información adicional que aparece cuando pasas el mouse sobre la tarjeta. Puedes incluir texto, imágenes o cualquier contenido HTML.</p>
+    <p>Se puede personalizar para mostrar más datos o detalles del producto, noticia o servicio.</p>
+  </div>
+</div>
+
+
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarjetas Desplegables</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: #f0f0f0;
+    padding: 20px;
+  }
+
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* espacio entre tarjetas */
+    width: 700px; /* ancho máximo */
+  }
+
+  .cuadro {
+    display: flex;
+    gap: 10px;
+    align-items: stretch; /* clave para que la imagen y la tarjeta tengan la misma altura */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    background: #fff;
+    transition: all 0.3s;
+  }
+
+  /* Imagen como fondo */
+  .imagen {
+    width: 40%;
+    background: url('descarga.jpg') center/cover no-repeat;
+    transition: all 0.5s ease;
+  }
+
+  .card {
+    flex: 1; /* ocupa todo el espacio restante */
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+  }
+
+  .card-header {
+    padding: 20px;
+    background: #4CAF50;
+    color: #fff;
+    font-size: 1.2em;
+  }
+
+  .card-resumen {
+    padding: 15px 20px;
+    font-size: 0.95em;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    padding: 0 20px;
+    background: #f9f9f9;
+  }
+
+  .card:hover .card-content {
+    max-height: 300px; /* ajusta según el contenido */
+    padding: 15px 20px;
+  }
+
+  .card-content p {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="contenedor">
+
+  <!-- Tarjeta 1 -->
+  <div class="cuadro">
+    <div class="imagen"></div>
+    <div class="card">
+      <div class="card-header">Información Importante</div>
+      <div class="card-resumen">
+         <ul>
+            <li>a</li>
+             <li>a</li>
+              <li>a</li>
+               <li>a</li>
+                <li>a</li>
+         </ul>
+      </div>
+      <div class="card-content">
+        <p>Esta es la información adicional que aparece cuando pasas el mouse sobre la tarjeta. Puedes incluir texto, imágenes o cualquier contenido HTML.</p>
+        <p>Se puede personalizar para mostrar más datos o detalles del producto, noticia o servicio.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarjeta 2 -->
+  <div class="cuadro">
+    <div class="imagen" style="background-image: url('descarga2.jpg');"></div>
+    <div class="card">
+      <div class="card-header">Otra Información</div>
+      <div class="card-resumen">
+        📰 Novedades destacadas.
+      </div>
+      <div class="card-content">
+        <p>Más detalles de la segunda tarjeta. La imagen se adapta a la altura de la tarjeta desplegada.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
